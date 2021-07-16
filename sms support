@@ -1,0 +1,16 @@
+from twilio.rest import Client
+
+account_sid = 'AC68cfcbd8e8a442f1b512c224ddb6db5e'
+auth_token = '3d051ba55ddbd6f167f90f402f5f8e21'
+client = Client(account_sid, auth_token)
+
+message = client.messages \
+                .create(
+                     body="피자먹고시퍼요",
+                     from_='+14847026220',
+                     to='+821072927531'
+                 )
+
+print(message.sid)
+
+# body에 원하는 내용 작성해서 특정 번호로 문자메시지 전송하는 기능 구현
